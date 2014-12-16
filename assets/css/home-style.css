@@ -1033,89 +1033,89 @@ html, body {
   left: 20px;
 }
 
-/* line 21, sass/home-style.scss */
+/* line 22, sass/home-style.scss */
 body {
   color: #2D2D2D;
   font-family: "Junge Regular", "Times New Roman", Georgia, serif;
   font-size: 1em;
 }
 
-/* line 27, sass/home-style.scss */
+/* line 28, sass/home-style.scss */
 h1 {
   font-size: 5em;
   margin: 0.45em 0;
   text-transform: uppercase;
 }
 
-/* line 32, sass/home-style.scss */
+/* line 33, sass/home-style.scss */
 h2 {
   font-size: 2.225em;
   margin-bottom: 24px;
 }
 
-/* line 36, sass/home-style.scss */
+/* line 37, sass/home-style.scss */
 h3 {
   font-size: 1.725em;
 }
 
-/* line 43, sass/home-style.scss */
+/* line 44, sass/home-style.scss */
 h1 span,
 h2 span,
 h3 span {
   padding: 6px 2px;
 }
 
-/* line 48, sass/home-style.scss */
+/* line 49, sass/home-style.scss */
 .site-notice {
   background: rgba(0, 0, 0, 0.5);
   text-align: center;
   top: 0;
   width: 100%;
 }
-/* line 54, sass/home-style.scss */
+/* line 55, sass/home-style.scss */
 .site-notice a {
   color: rgba(255, 153, 0, 0.8);
 }
 /* line 24, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/typography/links/_link-colors.scss */
 .site-notice a:hover {
-  color: #FF9900;
+  color: #da5c56;
 }
 
-/* line 59, sass/home-style.scss */
+/* line 60, sass/home-style.scss */
 #menu {
   display: none;
 }
 
-/* line 63, sass/home-style.scss */
+/* line 64, sass/home-style.scss */
 .section {
   text-align: center;
 }
-/* line 66, sass/home-style.scss */
+/* line 67, sass/home-style.scss */
 .section span {
   padding: 0 10px 0 10px;
 }
 
-/* line 71, sass/home-style.scss */
+/* line 72, sass/home-style.scss */
 #section0 {
   background: url("/assets/images/skin/noisy_texture_section0-200x200.png") repeat 0 0 #F0F0F0;
 }
 
-/* line 74, sass/home-style.scss */
+/* line 75, sass/home-style.scss */
 #section1 {
   background: url("/assets/images/skin/noisy_texture_section1-200x200.png") repeat 0 0 #150E1F;
 }
 
-/* line 78, sass/home-style.scss */
+/* line 79, sass/home-style.scss */
 #fullPage-nav span {
   border: 1px solid #8A8A8A;
 }
 
-/* line 81, sass/home-style.scss */
+/* line 82, sass/home-style.scss */
 #fullPage-nav li .active span {
   background: #707070;
 }
 
-/* line 85, sass/home-style.scss */
+/* line 86, sass/home-style.scss */
 .btn-light,
 .btn-dark {
   -moz-transition: all 0.3s ease-in-out;
@@ -1127,38 +1127,38 @@ h3 span {
   outline: none;
   text-decoration: none;
 }
-/* line 93, sass/home-style.scss */
+/* line 94, sass/home-style.scss */
 .btn-light:hover,
 .btn-dark:hover {
   border: 1px solid #fff;
 }
 
-/* line 98, sass/home-style.scss */
+/* line 99, sass/home-style.scss */
 .btn-dark {
   background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
-/* line 101, sass/home-style.scss */
+/* line 102, sass/home-style.scss */
 .btn-dark:hover, .btn-dark:focus {
   background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-/* line 105, sass/home-style.scss */
+/* line 106, sass/home-style.scss */
 .btn-light {
   background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-/* line 108, sass/home-style.scss */
+/* line 109, sass/home-style.scss */
 .btn-light:hover, .btn-light:focus {
   background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
-/* line 112, sass/home-style.scss */
+/* line 113, sass/home-style.scss */
 .btn-enter {
   padding: 4px 6px 0px 4px;
 }
 
-/* line 116, sass/home-style.scss */
+/* line 117, sass/home-style.scss */
 .btn-continue {
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -1182,18 +1182,18 @@ h3 span {
   -webkit-tap-highlight-color: transparent;
   /* For some Androids */
 }
-/* line 135, sass/home-style.scss */
+/* line 136, sass/home-style.scss */
 .btn-continue:hover {
   -webkit-animation-name: bounce;
   animation-name: bounce;
 }
 
-/* line 141, sass/home-style.scss */
+/* line 142, sass/home-style.scss */
 .social-links {
   -webkit-animation-delay: .25s;
   animation-delay: .25s;
 }
-/* line 145, sass/home-style.scss */
+/* line 146, sass/home-style.scss */
 .social-links a {
   background-size: 64px 64px;
   margin: 18px;
