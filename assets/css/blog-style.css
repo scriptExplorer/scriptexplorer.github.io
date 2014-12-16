@@ -712,35 +712,35 @@ input::-webkit-search-results-decoration {
   animation-name: fadeInUp;
 }
 
-/* line 24, sass/blog-style.scss */
+/* line 25, sass/blog-style.scss */
 ::-webkit-scrollbar {
   width: 12px;
 }
 
-/* line 27, sass/blog-style.scss */
+/* line 28, sass/blog-style.scss */
 ::-webkit-scrollbar-track {
   background-color: #EBEBEB;
   border-left: 1px solid #BFBFBF;
 }
 
-/* line 31, sass/blog-style.scss */
+/* line 32, sass/blog-style.scss */
 ::-webkit-scrollbar-thumb {
   background-color: #BFBFBF;
 }
 
-/* line 34, sass/blog-style.scss */
+/* line 35, sass/blog-style.scss */
 ::-webkit-scrollbar-thumb:hover {
   background-color: #797979;
 }
 
-/* line 38, sass/blog-style.scss */
+/* line 39, sass/blog-style.scss */
 body {
   font-family: "Bitter", Georgia, serif;
   font-size: 1em;
   line-height: 1.75em;
 }
 
-/* line 44, sass/blog-style.scss */
+/* line 45, sass/blog-style.scss */
 h1,
 h2,
 h3,
@@ -750,7 +750,7 @@ h3,
   font-family: "Ubuntu Condensed", "DejaVu Sans Mono", sans-serif;
 }
 
-/* line 53, sass/blog-style.scss */
+/* line 54, sass/blog-style.scss */
 h1,
 .h1 {
   font-size: 2.25em;
@@ -759,7 +759,7 @@ h1,
   margin-bottom: 26px;
 }
 
-/* line 60, sass/blog-style.scss */
+/* line 61, sass/blog-style.scss */
 h2,
 .h2 {
   font-size: 1.875em;
@@ -768,7 +768,7 @@ h2,
   margin-bottom: 16px;
 }
 
-/* line 67, sass/blog-style.scss */
+/* line 68, sass/blog-style.scss */
 h3,
 .h3 {
   font-size: 1.425em;
@@ -777,7 +777,7 @@ h3,
   margin-bottom: 20px;
 }
 
-/* line 74, sass/blog-style.scss */
+/* line 75, sass/blog-style.scss */
 h4,
 .h4 {
   line-height: 26px;
@@ -785,7 +785,7 @@ h4,
   margin-bottom: 12px;
 }
 
-/* line 80, sass/blog-style.scss */
+/* line 81, sass/blog-style.scss */
 p,
 ul,
 ol,
@@ -794,34 +794,34 @@ img {
   margin-top: 0;
 }
 
-/* line 87, sass/blog-style.scss */
+/* line 88, sass/blog-style.scss */
 small,
 .small,
 aside {
   font-size: 0.75em;
 }
 
-/* line 92, sass/blog-style.scss */
+/* line 93, sass/blog-style.scss */
 .font-size-default {
   font-size: 1em;
 }
 
-/* line 95, sass/blog-style.scss */
+/* line 96, sass/blog-style.scss */
 blockquote cite {
   font-weight: normal;
 }
 
-/* line 98, sass/blog-style.scss */
+/* line 99, sass/blog-style.scss */
 strong {
   font-weight: bold;
 }
 
-/* line 101, sass/blog-style.scss */
+/* line 102, sass/blog-style.scss */
 em {
   font-weight: bold;
 }
 
-/* line 104, sass/blog-style.scss */
+/* line 105, sass/blog-style.scss */
 .list-linear {
   letter-spacing: -0.31em;
   *letter-spacing: normal;
@@ -829,7 +829,7 @@ em {
   list-style: none;
   padding-left: 0;
 }
-/* line 111, sass/blog-style.scss */
+/* line 112, sass/blog-style.scss */
 .list-linear li {
   display: inline-block;
   *display: inline;
@@ -840,17 +840,17 @@ em {
   word-spacing: normal;
   vertical-align: middle;
 }
-/* line 122, sass/blog-style.scss */
+/* line 123, sass/blog-style.scss */
 .list-linear li:last-child {
   margin-right: 0;
 }
 
-/* line 127, sass/blog-style.scss */
+/* line 128, sass/blog-style.scss */
 html {
   background: url("/assets/images/skin/noisy_texture_section0-200x200.png") repeat 0 0 #F9F9F9;
 }
 
-/* line 130, sass/blog-style.scss */
+/* line 131, sass/blog-style.scss */
 .body .unit-body {
   -moz-box-shadow: #ADADAD 0 0 9px;
   -webkit-box-shadow: #ADADAD 0 0 9px;
@@ -861,7 +861,7 @@ html {
 }
 
 /* LINK */
-/* line 137, sass/blog-style.scss */
+/* line 138, sass/blog-style.scss */
 a:link,
 a:visited,
 a:hover {
@@ -869,7 +869,7 @@ a:hover {
 }
 
 /* HIGHLIGHTER */
-/* line 143, sass/blog-style.scss */
+/* line 144, sass/blog-style.scss */
 pre,
 code,
 kbd,
@@ -878,7 +878,7 @@ samp {
   font-size: .9em;
 }
 
-/* line 150, sass/blog-style.scss */
+/* line 151, sass/blog-style.scss */
 pre {
   -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.6);
   -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.6);
@@ -892,12 +892,12 @@ pre {
   padding: 1.625em !important;
   overflow: auto;
 }
-/* line 161, sass/blog-style.scss */
+/* line 162, sass/blog-style.scss */
 pre code {
   white-space: pre;
 }
 
-/* line 166, sass/blog-style.scss */
+/* line 167, sass/blog-style.scss */
 .linenos pre {
   background-color: #4B4B4B;
   padding-left: 0.625em !important;
@@ -905,13 +905,13 @@ pre code {
   overflow: visible;
 }
 
-/* line 172, sass/blog-style.scss */
+/* line 173, sass/blog-style.scss */
 .line-numbers,
 .highlighttable .highlight {
   font-size: 0.8em;
 }
 
-/* line 177, sass/blog-style.scss */
+/* line 178, sass/blog-style.scss */
 pre::-webkit-scrollbar,
 .gist-data::-webkit-scrollbar,
 .highlight::-webkit-scrollbar {
@@ -922,7 +922,7 @@ pre::-webkit-scrollbar,
   background-color: #363830;
 }
 
-/* line 185, sass/blog-style.scss */
+/* line 186, sass/blog-style.scss */
 pre::-webkit-scrollbar-track,
 .gist-data::-webkit-scrollbar-track,
 .highlight::-webkit-scrollbar-track {
@@ -932,7 +932,7 @@ pre::-webkit-scrollbar-track,
   background-color: #272822;
 }
 
-/* line 192, sass/blog-style.scss */
+/* line 193, sass/blog-style.scss */
 pre::-webkit-scrollbar-thumb:horizontal,
 .gist-data::-webkit-scrollbar-thumb:horizontal,
 .highlight::-webkit-scrollbar-thumb:horizontal {
@@ -1060,7 +1060,7 @@ pre::-webkit-scrollbar-thumb:horizontal,
   -o-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: rgba(255, 153, 0, 0.7);
+  background-color: #da5c56;
 }
 /* line 46, sass/blog/_unit-article.scss */
 .unit-article h1 a,
@@ -1733,7 +1733,7 @@ pre::-webkit-scrollbar-thumb:horizontal,
 }
 /* line 30, sass/blog/_footer.scss */
 .the-footer p a:hover {
-  background-color: rgba(255, 153, 0, 0.7);
+  background-color: #da5c56;
 }
 /* line 36, sass/blog/_footer.scss */
 .the-footer h4 {
