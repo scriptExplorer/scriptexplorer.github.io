@@ -10,11 +10,11 @@
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="author" content="scriptExplorer">
-    <meta name="description" content="This page shows a list of categories used in all articles and notes on scriptExplorer's blog." />
-    <meta name="keywords" content="scriptExplorer,software,engineer,testing,web," />
+    <meta name="description" content="web服务端架构分析" />
+    <meta name="keywords" content="scriptExplorer,architecture,web 架构,服务端架构" />
     
 
-    <title>Categories - scriptExplorer</title>
+    <title>web服务端架构 - scriptExplorer</title>
 
     <link href='/assets/css/blog-style.css' rel="stylesheet" type="text/css">
     <link href="/rss.xml" rel="alternate" title="scriptExplorer" type="application/rss+xml">
@@ -109,26 +109,31 @@ ga('send', 'pageview');
                     <div class="entry-content">
                         
 
-<article class="unit-article layout-page">
+<article class="unit-article layout-post">
     <div class="unit-inner unit-article-inner">
-        <div class="content">
+        <div itemscope itemtype="http://schema.org/Article" class="content">
             <header>
                 <div class="unit-head">
                     <div class="unit-inner unit-head-inner">
-                        <h1 class="entry-title">Posts By Category</h1>
+                        <h1 itemprop="name" class="entry-title">web服务端架构</h1>
                     </div><!-- unit-inner -->
                 </div><!-- unit-head -->
             </header>
-
             <div class="bd">
                 <div class="entry-content">
-                    
-
-
-
-<ul class="tag_box categories inline">
-    
-    
+                        <div class="meta">
+                            <p class="date-publish">
+                               Published: <time itemprop="datePublished" class="date-pub updated" title="2014-12-31T00:00:00+08:00" datetime="2014-12-31T00:00:00+08:00">December 31, 2014 </time> by 
+                                <a class="author" href="/" rel="author"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">scriptExplorer</span></span></a>
+                                <a class="license image-link" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+                                    <img alt="Creative Commons Licence" style="border-width:0" src="/assets/images/cc-by-sa.png"  height="16" width="80"/>
+                                </a>
+                                
+                            </p>
+                            <ul class="list-category list-linear">
+                                <li class="list-head">Categories: </li>
+                                
+                                
 
 
     
@@ -137,74 +142,228 @@ ga('send', 'pageview');
                 <a data-ga="architecture" href="/categories/#architecture" title="architecture">
                 architecture <span>1</span></a>
             </li>
-         
+        
+    
+
+
+
+                            </ul>
+                            <ul class="list-tag list-linear">
+                                <li class="list-head">Tags: </li>
+                                
+                                
+
+
+    
+        
+            
             <li>
-                <a data-ga="random" href="/categories/#random" title="random">
-                random <span>1</span></a>
+                <a data-ga="architecture" href="/tags/#architecture" title="architecture">architecture <span>1</span></a>
+            </li>
+        
+            
+            <li>
+                <a data-ga="web 架构" href="/tags/#web-架构" title="web 架构">web 架构 <span>1</span></a>
+            </li>
+        
+            
+            <li>
+                <a data-ga="服务端架构" href="/tags/#服务端架构" title="服务端架构">服务端架构 <span>1</span></a>
             </li>
         
     
 
 
 
+                            </ul>
+                        </div><!-- meta -->
+                        <div itemprop="articleBody">
+                            <p>在过去的几年里, 我所在的团队做了几个比较大的web项目, 累积了一些web架构经验总结于此, 本文偏向于的宏观设计.</p>
+
+<p>如图:</p>
+
+<p><img src="http://7sbrtd.com1.z0.glb.clouddn.com/blog_web_architectures.png" alt="" /></p>
+
+<ul>
+  <li>
+    <p><a href="http://zh.wikipedia.org/wiki/CDN">CDN</a> 和 <a href="http://zh.wikipedia.org/wiki/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86">Reverse Proxy</a> 一样,都是对内容进行缓存. 不同之处在于CDN部署在网络提供商机房, 而反向代理部署在网站中心机房.
+常用的反向代理软件有: <a href="http://nginx.org/">nginx</a> <a href="http://haproxy.com/">haproxy</a> <a href="http://httpd.apache.org/">apache</a> <a href="http://www.squid-cache.org/">squid</a> 我们可以配合 <a href="http://www.keepalived.org/">keepalived</a> 实现高可用.
+反向代理 我们使用的是 <a href="http://haproxy.com/">haproxy</a></p>
+  </li>
+  <li>
+    <p>Load Balancing 是指多台服务器提供相同服务,为了提高系统 Availability
+常用软件有: <a href="http://haproxy.com/">haproxy</a> <a href="http://www.f5.com.cn/">F5</a> <a href="http://nginx.org/">nginx</a> <a href="http://www.linuxvirtualserver.org/">LVS</a>
+我们团队使用 <a href="http://haproxy.com/">haproxy</a> 和 <a href="http://www.linuxvirtualserver.org/">LVS</a></p>
+  </li>
+  <li>
+    <p>Web Server 就是我们的网站了, 一般使用 <a href="http://nginx.org/">nginx</a> <a href="http://httpd.apache.org/">apache</a> <a href="http://tomcat.apache.org/">tomcat</a> <a href="http://www.eclipse.org/jetty/">jetty</a> <a href="resin.caucho.com/">resin</a></p>
+  </li>
+  <li>
+    <p>Service Server 基于Micro services理念,将不同的功能\服务分割开, 构造成高内聚低偶尔的独立模块.便于维护提高扩展力.</p>
+  </li>
+  <li>
+    <p>File System 文件系统,一般系统常用的有<a href="http://zh.wikipedia.org/wiki/RAID">RAID</a> <a href="http://hadoop.apache.org/">Hadoop Fs</a> <a href="http://code.taobao.com">TFS</a></p>
+  </li>
+  <li>
+    <p>RDBMS 关系型数据库 一般使用 <a href="http://mysql.com">Msql</a> <a href="http://www.oracle.com">Oracle</a> <a href="http://www.postgresql.org/">PostgreSQL</a></p>
+  </li>
+  <li>
+    <p>NoSQL 源自互联网的技术手段, 一般都有更好的伸缩性, 我们一般使用 <a href="http://www.mongodb.org">MongoDB</a> <a href="http://couchdb.apache.org/">CouchDB</a>  <a href="http://www.hbase.org/">HBase</a> <a href="http://cassandra.apache.org/">Cassandra</a> <a href="http://neo4j.com/">Neo4j</a></p>
+  </li>
+  <li>
+    <p>Cache Server 缓存服务器一般使用 <a href="http://www.memcached.org">Memcached</a> <a href="http://www.redis.io/">Redis</a></p>
+  </li>
+  <li>
+    <p>Search Server 搜索服务器我们一般使用 <a href="http://lucene.apache.org/solr/">Lucene/Solr</a> <a href="http://www.elasticsearch.org/">ElasticSearch</a> <a href="http://sphinxsearch.com/">Sphinx</a></p>
+  </li>
+  <li>
+    <p>Computing Server 一般都会使用MapReduce策略</p>
+  </li>
 </ul>
 
+<h2>Web架构</h2>
+<p>在设计一个web项目的架构时，我一般从以下几个方面去考虑。</p>
 
-    <h3 id="architecture">architecture</h3>
-    <ul class="posts">
-        
-        
+<h4>横向分层</h4>
 
+<table>
+  <thead>
+    <tr>
+      <th>分层架构</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>视图层</td>
+      <td>页面展示</td>
+    </tr>
+    <tr>
+      <td>应用层</td>
+      <td>业务逻辑</td>
+    </tr>
+    <tr>
+      <td>服务层</td>
+      <td>模块封装</td>
+    </tr>
+    <tr>
+      <td>数据层</td>
+      <td>数据访问</td>
+    </tr>
+  </tbody>
+</table>
 
-    
-        
-            
-                
-                    <li><a href="/2014/12/31/web-server-architectures">web服务端架构</a>
-                
-                <span class="date">Dec 31, 2014</span></li>
-            
-        
-    
+<h3>纵向分割</h3>
+<p>也就是我们常说的Micro services (cell/set架构), 原理是将一个大型系统拆分为N个小型系统。
+每个系统通过接口进行通讯.好处是高内聚低偶尔，提高扩展能力.</p>
 
+<h3>分布式</h3>
+<p>这里的分布式主要是指 Sharding, 分布式的好处就是提高了服务器的 scale out能力， 而其关键点就是 stateless。
+07年我在做股票平台时,当时 使用了tomcat的集群节点广播复制(jboss的配对复制等session状态复制策略情况也类似) 刚开始效果还不错, 后来发现主要问题是 session复制成本太高, 系统不能通过增加更多的机器来达到良好的水平伸缩，因为集群节点间session的 通信会随着节点的增多而开销增大. 因此想要得到更好的系统伸缩性, 就要保证系统的无状态性.
+如果做到系统的无状态性呢?
+构建passport 服务, 统一用户状态管理.</p>
 
+<h3>集群</h3>
+<p>集群主要指的是 Replication. 提高系统的并发能力和  Available能力。</p>
 
+<h3>缓存</h3>
+<p>一般来讲当读写比例在2:1以上，我们才会考虑去缓存。
+#### 页面缓存 
+一般静态资源(JS, css, image, html) 会缓存到 CDN 和 反向代理服务器上， 减小WebServer压力.</p>
 
-    </ul>
+<h4>数据缓存</h4>
+<p>将数据缓存到 本地缓存/分布式缓存 服务器上，以减小数据库压力。</p>
 
-    <h3 id="random">random</h3>
-    <ul class="posts">
-        
-        
+<h3>异步</h3>
+<p>业务处理使用pub/sub模式， 可加快服务器响应速度。
+请求处理使用pub/sub模式， 可以控制并发峰值。</p>
 
+<h3>自动化</h3>
+<p>测试自动化，发布自动化，自动化监控报警, 自动化失效恢复。</p>
 
-    
-        
-            
-                
-                    <li><a href="/2013/05/20/hello-world">Hello World!</a>
-                
-                <span class="date">May 20, 2013</span></li>
-            
-        
-    
+<h3>安全</h3>
+<p>XSS攻击， 注入攻击， CSRF 攻击， 用户信息加密， 传输加密, 反垃圾信息。</p>
 
+<h3>Other</h3>
+<p>我们可以参考一些指标来衡量数据架构,看看是否满足高并发低延迟的目标。</p>
 
+<table>
+  <thead>
+    <tr>
+      <th>操作</th>
+      <th style="text-align: left">时间</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>打开一个网站</td>
+      <td style="text-align: left">3s内算正常</td>
+    </tr>
+    <tr>
+      <td>RDBMS使用索引查询一条记录</td>
+      <td style="text-align: left">15 ms</td>
+    </tr>
+    <tr>
+      <td>机械硬盘一次寻址定位</td>
+      <td style="text-align: left">8~10ms</td>
+    </tr>
+    <tr>
+      <td>机械硬盘顺序读取1MB</td>
+      <td style="text-align: left">20~25ms</td>
+    </tr>
+    <tr>
+      <td>SSD顺序读取1MB</td>
+      <td style="text-align: left">0.6ms</td>
+    </tr>
+    <tr>
+      <td>Redis读取一个数据</td>
+      <td style="text-align: left">0.5ms</td>
+    </tr>
+    <tr>
+      <td>LocalCache读取一个数据</td>
+      <td style="text-align: left">15微秒</td>
+    </tr>
+    <tr>
+      <td>Java native invoke method</td>
+      <td style="text-align: left">5 微秒</td>
+    </tr>
+  </tbody>
+</table>
 
+<p>更多请移步: <a href="https://github.com/scriptExplorer/CodingBetter/blob/master/LatencyNumbers.md">LatencyNumbers</a></p>
 
-    </ul>
-
-
+                        </div>
                 </div><!-- entry-content -->
             </div><!-- bd -->
-
             <footer class="unit-foot">
                 <div class="unit-inner unit-foot-inner">
-                    <p class="gotop">
+                    <div class="gotop">
                         <a class="internal" href="#page">Back to Top</a>
-                    </p>
+                        <!-- AddThis Button BEGIN -->
+                        <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+                            <a class="addthis_button_email"></a>
+                            <a class="addthis_button_facebook"></a>
+                            <a class="addthis_button_google_plusone_share"></a>
+                            <a class="addthis_button_reddit"></a>
+                            <a class="addthis_button_twitter"></a>
+                        </div>
+                        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid="></script>
+                        <!-- AddThis Button END -->
+                    </div>
+                    <nav class="pagination">
+                        
+                            <a class="internal" data-ga="Previous Post" rel="prev" href="/2013/05/20/hello-world" title="View 'Hello World!'"> ← Hello World!</a>
+                        
+                        
+                    </nav>
                 </div>
             </footer>
+            <div class="misc-content">
+                <div class="comment">
+                    <button class="center-block show-hidden" data-ga="Show Comments" data-disqus-url="http://scriptExplorer.me/2014/12/31/web-server-architectures/">Show Comments</button>
+                    <div id="disqus_thread"></div>
+                </div>
+            </div><!-- misc-content -->
         </div><!-- content -->
     </div><!-- unit-inner -->
 </article>
@@ -393,7 +552,54 @@ $(document).ready(function () {
 </script>
 
 
+	
 
+	
+		<script src="/assets/js/google-code-prettify/run_prettify.js?lang=yaml"></script>
+		<script>
+			$("head").append('<link rel="stylesheet" href="/assets/css/highlight.css" type="text/css" />');
+			$("head").append('<link rel="stylesheet" href="/assets/js/google-code-prettify/prettify.css" type="text/css" />');
+		</script>
+	
+
+	
+
+	
+
+
+
+<script>
+$(document).ready(function () {
+	var disqusPublicKey = "3p4nhmY5mKAlDxrUCkhgh9EYli0vfQo0c1804VP0WvraC1IksyXjlgfCEpVaM1dO";
+	var disqusShortname = "scriptExplorer";
+	var threadUrl = 'link:' + $('.comment .show-hidden').attr('data-disqus-url');
+
+	$.ajax({
+		type: 'GET',
+		url: 'https://disqus.com/api/3.0/threads/set.jsonp',
+		data: { api_key: disqusPublicKey, forum: disqusShortname, thread: threadUrl },
+		cache: false,
+		dataType: 'jsonp',
+		success: function(result) {
+			if (result.response.length === 1) {
+				btnText = 'Show Comments (' + result.response[0].posts + ')';
+				$('.comment .show-hidden').html(btnText);
+			}
+		}
+	});
+
+	$('.comment .show-hidden').on('click', function() {
+		$.ajaxSetup({cache:true});
+		$.getScript('http://' + disqusShortname + '.disqus.com/embed.js');
+		$.ajaxSetup({cache:false});
+		$(this).remove();
+	});
+
+	if(/\#comment/.test(location.hash)){
+		$('.comment .show-hidden').trigger('click');
+	}
+});
+</script>
 
 
 </body>

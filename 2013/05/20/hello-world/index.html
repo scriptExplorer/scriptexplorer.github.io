@@ -10,11 +10,11 @@
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="author" content="scriptExplorer">
-    <meta name="description" content="This page shows a list of categories used in all articles and notes on scriptExplorer's blog." />
-    <meta name="keywords" content="scriptExplorer,software,engineer,testing,web," />
+    <meta name="description" content="The first 'Hello world' post for scriptExplorer's personal website 'scriptExplorer.me' in order to test Jekyll code highlightings." />
+    <meta name="keywords" content="scriptExplorer,jekyll" />
     
 
-    <title>Categories - scriptExplorer</title>
+    <title>Hello World! - scriptExplorer</title>
 
     <link href='/assets/css/blog-style.css' rel="stylesheet" type="text/css">
     <link href="/rss.xml" rel="alternate" title="scriptExplorer" type="application/rss+xml">
@@ -109,34 +109,34 @@ ga('send', 'pageview');
                     <div class="entry-content">
                         
 
-<article class="unit-article layout-page">
+<article class="unit-article layout-post">
     <div class="unit-inner unit-article-inner">
-        <div class="content">
+        <div itemscope itemtype="http://schema.org/Article" class="content">
             <header>
                 <div class="unit-head">
                     <div class="unit-inner unit-head-inner">
-                        <h1 class="entry-title">Posts By Category</h1>
+                        <h1 itemprop="name" class="entry-title">Hello World!</h1>
                     </div><!-- unit-inner -->
                 </div><!-- unit-head -->
             </header>
-
             <div class="bd">
                 <div class="entry-content">
-                    
+                        <div class="meta">
+                            <p class="date-publish">
+                               Published: <time itemprop="datePublished" class="date-pub updated" title="2013-05-20T00:00:00+08:00" datetime="2013-05-20T00:00:00+08:00">May 20, 2013 </time> by 
+                                <a class="author" href="/" rel="author"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">scriptExplorer</span></span></a>
+                                <a class="license image-link" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+                                    <img alt="Creative Commons Licence" style="border-width:0" src="/assets/images/cc-by-sa.png"  height="16" width="80"/>
+                                </a>
+                                
+                            </p>
+                            <ul class="list-category list-linear">
+                                <li class="list-head">Categories: </li>
+                                
+                                
 
 
-
-<ul class="tag_box categories inline">
     
-    
-
-
-    
-         
-            <li>
-                <a data-ga="architecture" href="/categories/#architecture" title="architecture">
-                architecture <span>1</span></a>
-            </li>
          
             <li>
                 <a data-ga="random" href="/categories/#random" title="random">
@@ -147,64 +147,82 @@ ga('send', 'pageview');
 
 
 
-</ul>
-
-
-    <h3 id="architecture">architecture</h3>
-    <ul class="posts">
-        
-        
-
-
-    
-        
-            
-                
-                    <li><a href="/2014/12/31/web-server-architectures">web服务端架构</a>
-                
-                <span class="date">Dec 31, 2014</span></li>
-            
-        
-    
-
-
-
-
-    </ul>
-
-    <h3 id="random">random</h3>
-    <ul class="posts">
-        
-        
+                            </ul>
+                            <ul class="list-tag list-linear">
+                                <li class="list-head">Tags: </li>
+                                
+                                
 
 
     
         
             
-                
-                    <li><a href="/2013/05/20/hello-world">Hello World!</a>
-                
-                <span class="date">May 20, 2013</span></li>
-            
+            <li>
+                <a data-ga="jekyll" href="/tags/#jekyll" title="jekyll">jekyll <span>1</span></a>
+            </li>
         
     
 
 
 
+                            </ul>
+                        </div><!-- meta -->
+                        <div itemprop="articleBody">
+                            <p>Hello World!</p>
 
-    </ul>
+<script src="https://gist.github.com/scriptExplorer/2371e8b83c9254ed77f2.js"></script>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">foo</span>
+  <span class="nb">puts</span> <span class="s1">&#39;foo&#39;</span>
+<span class="k">end</span></code></pre></div>
+
+<div><pre class="prettyprint lang-c#"><code>public class Hello {
+	public static void Main() {
+		Console.WriteLine(&quot;Hello, World! This is a super long line to test the functionality of pygments code highlighting.&quot;);
+	}
+}</code></pre></div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-javascript" data-lang="javascript">1
+2
+3</code></pre></div></td><td class="code"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">myFunction</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
 
 
+                        </div>
                 </div><!-- entry-content -->
             </div><!-- bd -->
-
             <footer class="unit-foot">
                 <div class="unit-inner unit-foot-inner">
-                    <p class="gotop">
+                    <div class="gotop">
                         <a class="internal" href="#page">Back to Top</a>
-                    </p>
+                        <!-- AddThis Button BEGIN -->
+                        <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+                            <a class="addthis_button_email"></a>
+                            <a class="addthis_button_facebook"></a>
+                            <a class="addthis_button_google_plusone_share"></a>
+                            <a class="addthis_button_reddit"></a>
+                            <a class="addthis_button_twitter"></a>
+                        </div>
+                        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid="></script>
+                        <!-- AddThis Button END -->
+                    </div>
+                    <nav class="pagination">
+                        
+                        
+                            <a class="internal" data-ga="Next Post" rel="next" href="/2014/12/31/web-server-architectures" title="View 'web服务端架构'">web服务端架构 → </a>
+                        
+                    </nav>
                 </div>
             </footer>
+            <div class="misc-content">
+                <div class="comment">
+                    <button class="center-block show-hidden" data-ga="Show Comments" data-disqus-url="http://scriptExplorer.me/2013/05/20/hello-world/">Show Comments</button>
+                    <div id="disqus_thread"></div>
+                </div>
+            </div><!-- misc-content -->
         </div><!-- content -->
     </div><!-- unit-inner -->
 </article>
@@ -393,7 +411,54 @@ $(document).ready(function () {
 </script>
 
 
+	
 
+	
+		<script src="/assets/js/google-code-prettify/run_prettify.js?lang=yaml"></script>
+		<script>
+			$("head").append('<link rel="stylesheet" href="/assets/css/highlight.css" type="text/css" />');
+			$("head").append('<link rel="stylesheet" href="/assets/js/google-code-prettify/prettify.css" type="text/css" />');
+		</script>
+	
+
+	
+
+	
+
+
+
+<script>
+$(document).ready(function () {
+	var disqusPublicKey = "3p4nhmY5mKAlDxrUCkhgh9EYli0vfQo0c1804VP0WvraC1IksyXjlgfCEpVaM1dO";
+	var disqusShortname = "scriptExplorer";
+	var threadUrl = 'link:' + $('.comment .show-hidden').attr('data-disqus-url');
+
+	$.ajax({
+		type: 'GET',
+		url: 'https://disqus.com/api/3.0/threads/set.jsonp',
+		data: { api_key: disqusPublicKey, forum: disqusShortname, thread: threadUrl },
+		cache: false,
+		dataType: 'jsonp',
+		success: function(result) {
+			if (result.response.length === 1) {
+				btnText = 'Show Comments (' + result.response[0].posts + ')';
+				$('.comment .show-hidden').html(btnText);
+			}
+		}
+	});
+
+	$('.comment .show-hidden').on('click', function() {
+		$.ajaxSetup({cache:true});
+		$.getScript('http://' + disqusShortname + '.disqus.com/embed.js');
+		$.ajaxSetup({cache:false});
+		$(this).remove();
+	});
+
+	if(/\#comment/.test(location.hash)){
+		$('.comment .show-hidden').trigger('click');
+	}
+});
+</script>
 
 
 </body>

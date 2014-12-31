@@ -5,10 +5,171 @@
         <description>scriptExplorer</description>
         <atom:link href="http://scriptExplorer.me/rss.xml" rel="self" type="application/rss+xml" />
         <link>http://scriptExplorer.me</link>
-        <lastBuildDate>Wed, 17 Dec 2014 18:00:55 +0800</lastBuildDate>
-        <pubDate>Wed, 17 Dec 2014 18:00:55 +0800</pubDate>
+        <lastBuildDate>Thu, 01 Jan 2015 00:21:16 +0800</lastBuildDate>
+        <pubDate>Thu, 01 Jan 2015 00:21:16 +0800</pubDate>
         <ttl>1800</ttl>
 
+        
+            <item>
+                    <title>web服务端架构</title>
+                    <description>&lt;p&gt;在过去的几年里, 我所在的团队做了几个比较大的web项目, 累积了一些web架构经验总结于此, 本文偏向于的宏观设计.&lt;/p&gt;
+
+&lt;p&gt;如图:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://7sbrtd.com1.z0.glb.clouddn.com/blog_web_architectures.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://zh.wikipedia.org/wiki/CDN&quot;&gt;CDN&lt;/a&gt; 和 &lt;a href=&quot;http://zh.wikipedia.org/wiki/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86&quot;&gt;Reverse Proxy&lt;/a&gt; 一样,都是对内容进行缓存. 不同之处在于CDN部署在网络提供商机房, 而反向代理部署在网站中心机房.
+常用的反向代理软件有: &lt;a href=&quot;http://nginx.org/&quot;&gt;nginx&lt;/a&gt; &lt;a href=&quot;http://haproxy.com/&quot;&gt;haproxy&lt;/a&gt; &lt;a href=&quot;http://httpd.apache.org/&quot;&gt;apache&lt;/a&gt; &lt;a href=&quot;http://www.squid-cache.org/&quot;&gt;squid&lt;/a&gt; 我们可以配合 &lt;a href=&quot;http://www.keepalived.org/&quot;&gt;keepalived&lt;/a&gt; 实现高可用.
+反向代理 我们使用的是 &lt;a href=&quot;http://haproxy.com/&quot;&gt;haproxy&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Load Balancing 是指多台服务器提供相同服务,为了提高系统 Availability
+常用软件有: &lt;a href=&quot;http://haproxy.com/&quot;&gt;haproxy&lt;/a&gt; &lt;a href=&quot;http://www.f5.com.cn/&quot;&gt;F5&lt;/a&gt; &lt;a href=&quot;http://nginx.org/&quot;&gt;nginx&lt;/a&gt; &lt;a href=&quot;http://www.linuxvirtualserver.org/&quot;&gt;LVS&lt;/a&gt;
+我们团队使用 &lt;a href=&quot;http://haproxy.com/&quot;&gt;haproxy&lt;/a&gt; 和 &lt;a href=&quot;http://www.linuxvirtualserver.org/&quot;&gt;LVS&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Web Server 就是我们的网站了, 一般使用 &lt;a href=&quot;http://nginx.org/&quot;&gt;nginx&lt;/a&gt; &lt;a href=&quot;http://httpd.apache.org/&quot;&gt;apache&lt;/a&gt; &lt;a href=&quot;http://tomcat.apache.org/&quot;&gt;tomcat&lt;/a&gt; &lt;a href=&quot;http://www.eclipse.org/jetty/&quot;&gt;jetty&lt;/a&gt; &lt;a href=&quot;resin.caucho.com/&quot;&gt;resin&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Service Server 基于Micro services理念,将不同的功能\服务分割开, 构造成高内聚低偶尔的独立模块.便于维护提高扩展力.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;File System 文件系统,一般系统常用的有&lt;a href=&quot;http://zh.wikipedia.org/wiki/RAID&quot;&gt;RAID&lt;/a&gt; &lt;a href=&quot;http://hadoop.apache.org/&quot;&gt;Hadoop Fs&lt;/a&gt; &lt;a href=&quot;http://code.taobao.com&quot;&gt;TFS&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;RDBMS 关系型数据库 一般使用 &lt;a href=&quot;http://mysql.com&quot;&gt;Msql&lt;/a&gt; &lt;a href=&quot;http://www.oracle.com&quot;&gt;Oracle&lt;/a&gt; &lt;a href=&quot;http://www.postgresql.org/&quot;&gt;PostgreSQL&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;NoSQL 源自互联网的技术手段, 一般都有更好的伸缩性, 我们一般使用 &lt;a href=&quot;http://www.mongodb.org&quot;&gt;MongoDB&lt;/a&gt; &lt;a href=&quot;http://couchdb.apache.org/&quot;&gt;CouchDB&lt;/a&gt;  &lt;a href=&quot;http://www.hbase.org/&quot;&gt;HBase&lt;/a&gt; &lt;a href=&quot;http://cassandra.apache.org/&quot;&gt;Cassandra&lt;/a&gt; &lt;a href=&quot;http://neo4j.com/&quot;&gt;Neo4j&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Cache Server 缓存服务器一般使用 &lt;a href=&quot;http://www.memcached.org&quot;&gt;Memcached&lt;/a&gt; &lt;a href=&quot;http://www.redis.io/&quot;&gt;Redis&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Search Server 搜索服务器我们一般使用 &lt;a href=&quot;http://lucene.apache.org/solr/&quot;&gt;Lucene/Solr&lt;/a&gt; &lt;a href=&quot;http://www.elasticsearch.org/&quot;&gt;ElasticSearch&lt;/a&gt; &lt;a href=&quot;http://sphinxsearch.com/&quot;&gt;Sphinx&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Computing Server 一般都会使用MapReduce策略&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Web架构&lt;/h2&gt;
+&lt;p&gt;在设计一个web项目的架构时，我一般从以下几个方面去考虑。&lt;/p&gt;
+
+&lt;h4&gt;横向分层&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;分层架构&lt;/th&gt;
+      &lt;th&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;视图层&lt;/td&gt;
+      &lt;td&gt;页面展示&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;应用层&lt;/td&gt;
+      &lt;td&gt;业务逻辑&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;服务层&lt;/td&gt;
+      &lt;td&gt;模块封装&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;数据层&lt;/td&gt;
+      &lt;td&gt;数据访问&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3&gt;纵向分割&lt;/h3&gt;
+&lt;p&gt;也就是我们常说的Micro services (cell/set架构), 原理是将一个大型系统拆分为N个小型系统。
+每个系统通过接口进行通讯.好处是高内聚低偶尔，提高扩展能力.&lt;/p&gt;
+
+&lt;h3&gt;分布式&lt;/h3&gt;
+&lt;p&gt;这里的分布式主要是指 Sharding, 分布式的好处就是提高了服务器的 scale out能力， 而其关键点就是 stateless。
+07年我在做股票平台时,当时 使用了tomcat的集群节点广播复制(jboss的配对复制等session状态复制策略情况也类似) 刚开始效果还不错, 后来发现主要问题是 session复制成本太高, 系统不能通过增加更多的机器来达到良好的水平伸缩，因为集群节点间session的 通信会随着节点的增多而开销增大. 因此想要得到更好的系统伸缩性, 就要保证系统的无状态性.
+如果做到系统的无状态性呢?
+构建passport 服务, 统一用户状态管理.&lt;/p&gt;
+
+&lt;h3&gt;集群&lt;/h3&gt;
+&lt;p&gt;集群主要指的是 Replication. 提高系统的并发能力和  Available能力。&lt;/p&gt;
+
+&lt;h3&gt;缓存&lt;/h3&gt;
+&lt;p&gt;一般来讲当读写比例在2:1以上，我们才会考虑去缓存。
+#### 页面缓存 
+一般静态资源(JS, css, image, html) 会缓存到 CDN 和 反向代理服务器上， 减小WebServer压力.&lt;/p&gt;
+
+&lt;h4&gt;数据缓存&lt;/h4&gt;
+&lt;p&gt;将数据缓存到 本地缓存/分布式缓存 服务器上，以减小数据库压力。&lt;/p&gt;
+
+&lt;h3&gt;异步&lt;/h3&gt;
+&lt;p&gt;业务处理使用pub/sub模式， 可加快服务器响应速度。
+请求处理使用pub/sub模式， 可以控制并发峰值。&lt;/p&gt;
+
+&lt;h3&gt;自动化&lt;/h3&gt;
+&lt;p&gt;测试自动化，发布自动化，自动化监控报警, 自动化失效恢复。&lt;/p&gt;
+
+&lt;h3&gt;安全&lt;/h3&gt;
+&lt;p&gt;XSS攻击， 注入攻击， CSRF 攻击， 用户信息加密， 传输加密, 反垃圾信息。&lt;/p&gt;
+
+&lt;h3&gt;Other&lt;/h3&gt;
+&lt;p&gt;我们可以参考一些指标来衡量数据架构,看看是否满足高并发低延迟的目标。&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;操作&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;时间&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;打开一个网站&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;3s内算正常&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RDBMS使用索引查询一条记录&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;15 ms&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;机械硬盘一次寻址定位&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;8~10ms&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;机械硬盘顺序读取1MB&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;20~25ms&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SSD顺序读取1MB&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;0.6ms&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Redis读取一个数据&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;0.5ms&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;LocalCache读取一个数据&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;15微秒&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Java native invoke method&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;5 微秒&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;更多请移步: &lt;a href=&quot;https://github.com/scriptExplorer/CodingBetter/blob/master/LatencyNumbers.md&quot;&gt;LatencyNumbers&lt;/a&gt;&lt;/p&gt;
+</description>
+                    <link>http://scriptExplorer.me/2014/12/31/web-server-architectures</link>
+                    <guid>http://scriptExplorer.me/2014/12/31/web-server-architectures</guid>
+                    <pubDate>Wed, 31 Dec 2014 00:00:00 +0800</pubDate>
+            </item>
         
             <item>
                     <title>Hello World!</title>
@@ -35,9 +196,9 @@
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
 </description>
-                    <link>http://scriptExplorer.me/2013/04/22/hello-world</link>
-                    <guid>http://scriptExplorer.me/2013/04/22/hello-world</guid>
-                    <pubDate>Mon, 22 Apr 2013 00:00:00 +0800</pubDate>
+                    <link>http://scriptExplorer.me/2013/05/20/hello-world</link>
+                    <guid>http://scriptExplorer.me/2013/05/20/hello-world</guid>
+                    <pubDate>Mon, 20 May 2013 00:00:00 +0800</pubDate>
             </item>
         
     </channel>
